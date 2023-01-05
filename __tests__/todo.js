@@ -41,10 +41,10 @@ describe("Test case for database", () => {
     var res = await agent.get("/signup");
     var csrfToken = getCsrfToken(res);
     const response = await agent.post("/users").send({
-      firstName: "Dipu",
-      lastName: "rvl",
-      email: "dipu@gmail.com",
-      password: "dipu",
+      firstName: "sk",
+      lastName: "reddy",
+      email: "skreddy@gmail.com",
+      password: "sk",
       _csrf: csrfToken,
     });
     expect(response.statusCode).toBe(302);
@@ -61,7 +61,7 @@ describe("Test case for database", () => {
 
   test("Creates a todo", async () => {
     var agent = request.agent(server);
-    await login(agent, "dipu@gmail.com", "dipu");
+    await login(agent, "skreddy@gmail.com", "sk");
     var res = await agent.get("/todos");
     var csrfToken = getCsrfToken(res);
     const response = await agent.post("/todos").send({
@@ -75,7 +75,7 @@ describe("Test case for database", () => {
 
   test("Mark todo as a completed (updating todo)", async () => {
     var agent = request.agent(server);
-    await login(agent, "dipu@gmail.com", "dipu");
+    await login(agent, "skreddy@gmail.com", "sk");
     var res = await agent.get("/todos");
     var csrfToken = getCsrfToken(res);
     await agent.post("/todos").send({
