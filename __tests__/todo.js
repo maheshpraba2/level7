@@ -65,7 +65,7 @@ describe("Test case for database", () => {
     var res = await agent.get("/todos");
     var csrfToken = getCsrfToken(res);
     const response = await agent.post("/todos").send({
-      title: "Buy milk",
+      title: "Buy cricket kit",
       dueDate: new Date().toISOString(),
       completed: false,
       _csrf: csrfToken,
@@ -79,7 +79,7 @@ describe("Test case for database", () => {
     var res = await agent.get("/todos");
     var csrfToken = getCsrfToken(res);
     await agent.post("/todos").send({
-      title: "Do HomeWork",
+      title: "play cricket",
       dueDate: new Date().toISOString(),
       completed: false,
       _csrf: csrfToken,
@@ -103,11 +103,11 @@ describe("Test case for database", () => {
 
   test("Deletes a todo with the given ID if it exists and sends a boolean response", async () => {
     var agent = request.agent(server);
-    await login(agent, "dipu@gmail.com", "dipu");
+    await login(agent, "skreddy@gmail.com", "sk");
     var res = await agent.get("/todos");
     var csrfToken = getCsrfToken(res);
     await agent.post("/todos").send({
-      title: "Buy xbox",
+      title: "Buy iphone",
       dueDate: new Date().toISOString(),
       completed: false,
       _csrf: csrfToken,
