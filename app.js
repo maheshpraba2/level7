@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const { Todo, User } = require("./models");
 const cookieParser = require("cookie-parser");
-// const csrf = require("csurf");
+
 const csrf = require("tiny-csrf");
 const bodyParser = require("body-parser");
 const path = require("path");
